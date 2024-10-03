@@ -1,0 +1,24 @@
+{
+  "name": "etherwiz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@aave/protocol-v2": "^1.0.1",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^4.9.6",
+    "ethers": "^6.13.3",
+    "hardhat": "^2.22.12"
+  },
+  "dependencies": {
+    "@aave/core-v3": "^1.19.3",
+    "dotenv": "^16.4.5"
+  }
+}
