@@ -15,11 +15,19 @@ async function main() {
 
     console.log("Using AddressProvider:", addressProvider);
 
-    // Deploy Flashloan contract
-    const Flashloan = await hre.ethers.getContractFactory("Flashloan");
-    const flashloan = await Flashloan.deploy(addressProvider);
-  
-    console.log("Flashloan contract deployed to:", flashloan.address);
+    // Deploy FlashloanArbitrageV3 contract
+    const FlashloanArbitrageV3 = await hre.ethers.getContractFactory("FlashloanArbitrageV3");
+    const flashloan = await FlashloanArbitrageV3.deploy(
+        process.env.AAVE_V3_POOL_ADDRESSES_PROVIDER_SEPOLIA,
+        process.env.MOCK_WETH_ADDRESS,
+        process.env.MOCK_DAI_ADDRESS,
+        process.env.UNISWAP_V3_ROUTER_ADDRESS,
+        process.env.SUSHISWAP_ROUTER_ADDRESS,
+        process.env.UNISWAP_V3_QUOTER_ADDRESS
+    );
+
+    await flashloan.deployed();
+    console.log("FlashloanArbitrageV3 deployed to:", flashloan.address);
 
     // Verify the contract on Etherscan
     if (process.env.ETHERSCAN_API_KEY) {

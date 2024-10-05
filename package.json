@@ -3,22 +3,31 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./input.css -o ./output.css",
+    "watch": "tailwindcss -i ./input.css -o ./output.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@aave/protocol-v2": "^1.0.1",
     "@nomicfoundation/hardhat-ethers": "^3.0.8",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@openzeppelin/contracts": "^4.9.6",
+    "autoprefixer": "^10.4.20",
     "ethers": "^6.13.3",
-    "hardhat": "^2.22.12"
+    "hardhat": "^2.22.12",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
   },
   "dependencies": {
     "@aave/core-v3": "^1.19.3",
+    "@uniswap/sdk-core": "^5.8.1",
+    "@uniswap/v2-core": "^1.0.1",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "@uniswap/v3-sdk": "^3.17.1",
     "dotenv": "^16.4.5"
-  }
+  },
+  "description": ""
 }
